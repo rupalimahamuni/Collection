@@ -1,18 +1,28 @@
 package com.collectiondemo;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.Map;
+import java.util.Set;
 
 public class Demo {
 
 	public static void main(String[] args) {
 		
-		List<Integer> list = new ArrayList<Integer>();
-		list.add(1);
-		list.add(2);
+		Map<Integer, String> map = new HashMap<Integer, String>();
+		map.put(1,"Rupali");
+		map.put(2, "Spruha");
+		map.put(3,"Meena");
+		map.put(4,  "Trupti");
+		map.put(5, "Anilkumar");
 		
-		for(Integer i : list) {
-			System.out.println(i);
+		Set<Integer> set = map.keySet();
+		Iterator itr = set.iterator();
+		
+		while(itr.hasNext()) {
+			Integer i = (Integer) itr.next();
+			System.out.println("Keys : "+i);
+			System.out.println("Values : "+map.get(i));
 		}
 	}			
 }
